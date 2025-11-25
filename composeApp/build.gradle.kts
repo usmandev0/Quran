@@ -149,7 +149,7 @@ android {
         buildFeatures {
             buildConfig = true
         }
-        applicationId = "com.kmpstarter"
+        applicationId = "com.usmandev.quran"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
