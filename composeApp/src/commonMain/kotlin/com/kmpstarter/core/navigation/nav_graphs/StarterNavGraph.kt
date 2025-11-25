@@ -4,7 +4,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.navigation
 import com.kmpstarter.core.navigation.screens.StarterScreens
-import com.kmpstarter.core.ui.composition_locals.LocalNavController
 import com.kmpstarter.core.ui.screens.WelcomeScreen
 import com.kmpstarter.core.ui.utils.navigation.appNavComposable
 
