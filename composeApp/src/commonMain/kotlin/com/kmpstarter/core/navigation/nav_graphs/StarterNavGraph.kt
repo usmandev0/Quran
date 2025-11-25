@@ -16,7 +16,6 @@ fun NavGraphBuilder.starterNavGraph(
         startDestination = StarterScreens.WelcomeScreen,
     ) {
         appNavComposable<StarterScreens.WelcomeScreen> {
-            val navController = LocalNavController.current
             WelcomeScreen(
                 modifier = scaffoldModifier,
                 onGetStartedClick = {
