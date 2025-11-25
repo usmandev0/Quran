@@ -24,13 +24,17 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.kmpstarter.feature_quran.data.data_source.dtos.Quran
 import com.kmpstarter.theme.Dimens
 import kmpstarter.composeapp.generated.resources.Res
+import kmpstarter.composeapp.generated.resources.arabic
 import kmpstarter.composeapp.generated.resources.bismila
+import kmpstarter.composeapp.generated.resources.noto
 import kmpstarter.composeapp.generated.resources.quran
+import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -73,6 +77,9 @@ fun SurahCard(
                 text = quran.name,
                 style = MaterialTheme.typography.headlineMedium.copy(
                     color = Color.White,
+                    fontFamily = FontFamily(
+                        Font(Res.font.arabic, weight = FontWeight.Normal)
+                    ),
                     fontWeight = FontWeight.Bold
                 )
             )
@@ -80,7 +87,10 @@ fun SurahCard(
             Text(
                 text = quran.translation,
                 style = MaterialTheme.typography.titleMedium.copy(
-                    color = Color.White
+                    color = Color.White,
+                    fontFamily = FontFamily(
+                        Font(Res.font.noto, weight = FontWeight.Normal)
+                    ),
                 )
             )
             Spacer(modifier = Modifier.height(Dimens.paddingLarge))

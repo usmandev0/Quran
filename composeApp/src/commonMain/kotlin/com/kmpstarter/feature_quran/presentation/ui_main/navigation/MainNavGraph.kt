@@ -9,8 +9,6 @@ import com.kmpstarter.feature_quran.presentation.ui_main.screens.NewScreen
 import com.kmpstarter.feature_quran.presentation.ui_main.screens.OnBoardScreen
 import com.kmpstarter.feature_quran.presentation.ui_main.screens.SplashScreen
 import com.kmpstarter.feature_quran.presentation.ui_main.screens.SurahScreen
-import com.kmpstarter.starter_features.auth.presentation.ui_main.screens.SignInScreen
-import com.kmpstarter.starter_features.auth.presentation.ui_main.screens.SignUpScreen
 
 fun NavGraphBuilder.mainNavGraph(
     scaffoldModifier: Modifier,

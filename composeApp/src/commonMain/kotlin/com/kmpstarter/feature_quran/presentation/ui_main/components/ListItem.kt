@@ -18,11 +18,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.kmpstarter.feature_quran.data.data_source.dtos.Quran
 import com.kmpstarter.theme.Dimens
+import kmpstarter.composeapp.generated.resources.Res
+import kmpstarter.composeapp.generated.resources.arabic
+import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
@@ -36,6 +40,7 @@ fun ListIem(
     Row(
         modifier = modifier
             .fillMaxWidth()
+            .padding(Dimens.paddingSmall)
             .height(62.dp)
             .clickable { onItemClick() },
         verticalAlignment = Alignment.CenterVertically
@@ -86,6 +91,9 @@ fun ListIem(
             text = item.name,
             style = MaterialTheme.typography.titleLarge.copy(
                 color = Color(0xFF863ED5),
+                fontFamily = FontFamily(
+                    Font(Res.font.arabic, weight = FontWeight.Normal)
+                ),
                 fontWeight = FontWeight.Bold,
             ),
             maxLines = 1,
