@@ -50,6 +50,20 @@ project-root/
 ```
 
 ---
+## Roadmap / Future Features
+
+- Add Tafsir support (multiple sources)
+- Add word-by-word translation and grammar detail
+- Add reciter selection and downloadable audio packs
+- Implement offline mode with full Quran data
+- Add search across Surahs, Ayahs, and translations
+- Add themes: sepia, dark AMOLED, and custom backgrounds
+- Add Tajweed color rules
+- Add notes and annotation system
+- Add daily verse notification
+- Add cloud sync for bookmarks and last-read
+
+
 
 ## Getting Started
 ### Clone Repository
