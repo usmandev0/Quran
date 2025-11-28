@@ -40,6 +40,7 @@ import com.kmpstarter.core.ui.composition_locals.LocalTopAppBarScrollBehavior
 import com.kmpstarter.core.ui.layouts.lists.CupertinoLazyColumn
 import com.kmpstarter.core.ui.modifiers.topAppBarScrollBehavior
 import com.kmpstarter.feature_quran.data.data_source.dtos.Quran
+import com.kmpstarter.feature_quran.data.data_source.dtos.en.QuranEn
 import com.kmpstarter.feature_quran.presentation.ui_main.cards.SurahCard
 import com.kmpstarter.feature_quran.presentation.ui_main.components.ItemAyah
 import com.kmpstarter.feature_quran.presentation.viewmodels.QuranViewModel
@@ -124,10 +125,10 @@ fun SurahScreen(
                         onClick = { focusManager.clearFocus() }
                     ),
                 currentSurah = state.currentSurah,
+                currentSurahEn = state.quranEn[state.currentSurah.id.toString()]?.get(0) ?: QuranEn.empty(),
                 isTranslationShow = isTranslationShow,
                 onPreviousClick = {
                     viewModel.navigateToNextORPreviousSurah(state.currentSurah.id - 1)
-
                 },
                 onNextClick = {
                     viewModel.navigateToNextORPreviousSurah(state.currentSurah.id + 1)
@@ -142,6 +143,7 @@ fun SurahScreen(
 fun SurahScreenContent(
     modifier: Modifier = Modifier,
     currentSurah: Quran,
+    currentSurahEn: QuranEn,
     isTranslationShow: Boolean,
     onPreviousClick: () -> Unit,
     onNextClick: () -> Unit
@@ -153,11 +155,11 @@ fun SurahScreenContent(
     LaunchedEffect(currentSurah.id) {
         if (
             currentSurah.verses.size > 50
-        ){            coroutine.launch {
+        ) {
+            coroutine.launch {
                 listState.scrollToItem(0)
             }
-        }
-        else{
+        } else {
             listState.animateScrollToItem(0)
         }
     }
@@ -186,6 +188,7 @@ fun SurahScreenContent(
             items(currentSurah.verses) { verse ->
                 ItemAyah(
                     verse = verse,
+                    verseEn = currentSurahEn,
                     isTranslationShow = isTranslationShow,
                     isLast = currentSurah.verses.last() == verse
                 )

@@ -3,6 +3,7 @@ package com.kmpstarter.feature_quran.presentation.viewmodels
 import androidx.lifecycle.ViewModel
 import com.kmpstarter.core.events.navigator.interfaces.Navigator
 import com.kmpstarter.feature_quran.data.data_source.dtos.Quran
+import com.kmpstarter.feature_quran.data.data_source.dtos.en.QuranEn
 import com.kmpstarter.feature_quran.presentation.states.QuranState
 import com.kmpstarter.feature_quran.presentation.ui_main.navigation.MainScreens
 import kmpstarter.composeapp.generated.resources.Res
@@ -41,13 +42,18 @@ class QuranViewModel(
                     loadingMessage = "Loading"
                 )
             }
-
             val jsonString = Res.readBytes("files/quran_ur.json").decodeToString()
             val list = Json.decodeFromString<List<Quran>>(jsonString)
+
+            val jsonStringEn = Res.readBytes("files/en.json").decodeToString()
+            val listEn = Json.decodeFromString<Map<String, List<QuranEn>>>(jsonStringEn)
+
+
             _state.update {
                 it.copy(
                     isLoading = false,
-                    quran = list
+                    quran = list,
+                    quranEn = listEn
                 )
             }
 

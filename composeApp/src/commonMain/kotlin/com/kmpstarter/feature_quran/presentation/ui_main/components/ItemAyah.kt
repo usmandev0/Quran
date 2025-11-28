@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.kmpstarter.feature_quran.data.data_source.dtos.Verse
+import com.kmpstarter.feature_quran.data.data_source.dtos.en.QuranEn
 import com.kmpstarter.theme.Dimens
 import kmpstarter.composeapp.generated.resources.Res
 import kmpstarter.composeapp.generated.resources.play_icon
@@ -36,6 +37,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun ItemAyah(
     modifier: Modifier = Modifier,
     verse: Verse,
+    verseEn: QuranEn,
+    isTranslationEnShow: Boolean = true,
     isTranslationShow: Boolean = true,
     isLast: Boolean = false
 ) {
@@ -93,6 +96,13 @@ fun ItemAyah(
             text = verse.text,
         )
 
+        AnimatedVisibility(isTranslationEnShow)
+        {
+            Spacer(modifier = Modifier.height(Dimens.paddingSmall))
+            EnglishText(
+                text = verseEn.text,
+            )
+        }
         AnimatedVisibility(isTranslationShow)
         {
             Spacer(modifier = Modifier.height(Dimens.paddingSmall))
@@ -124,6 +134,11 @@ fun ItemAyahPreview() {
             id = 1,
             text = "Text",
             translation = "Translation"
+        ),
+        verseEn = QuranEn(
+            chapter = 1,
+            verse = 1,
+            text = "Text",
         )
     )
 }

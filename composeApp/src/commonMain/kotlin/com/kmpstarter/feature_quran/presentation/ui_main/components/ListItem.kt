@@ -26,6 +26,7 @@ import com.kmpstarter.feature_quran.data.data_source.dtos.Quran
 import com.kmpstarter.theme.Dimens
 import kmpstarter.composeapp.generated.resources.Res
 import kmpstarter.composeapp.generated.resources.arabic
+import kmpstarter.composeapp.generated.resources.noto
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -89,10 +90,10 @@ fun ListIem(
         }
         Text(
             text = item.name,
-            style = MaterialTheme.typography.titleLarge.copy(
+            style = MaterialTheme.typography.titleMedium.copy(
                 color = Color(0xFF863ED5),
                 fontFamily = FontFamily(
-                    Font(Res.font.arabic, weight = FontWeight.Normal)
+                    Font(Res.font.noto, weight = FontWeight.Normal)
                 ),
                 fontWeight = FontWeight.Bold,
             ),

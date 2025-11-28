@@ -65,5 +65,26 @@ fun UrduText(
         ),
     )
 }
+@Composable
+@Preview
+fun EnglishText(
+    modifier: Modifier = Modifier,
+    text: String= "The quick brown fox jumps over the lazy dog",
+    color: Color = Color(0xFF240F4F)
+) {
+    Text(
+        modifier = modifier.fillMaxWidth().padding(Dimens.paddingExtraSmall),
+        text = text,
+        style = MaterialTheme.typography.bodyMedium.copy(
+            color = color,
+            textAlign = TextAlign.Start,
+            fontWeight = FontWeight.Bold,
+            lineHeight = 32.sp
+
+        ),
+    )
+}
+
+
 
 
