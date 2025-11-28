@@ -45,8 +45,6 @@ import com.kmpstarter.feature_quran.presentation.ui_main.cards.SurahCard
 import com.kmpstarter.feature_quran.presentation.ui_main.components.ItemAyah
 import com.kmpstarter.feature_quran.presentation.viewmodels.QuranViewModel
 import com.kmpstarter.theme.Dimens
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.koinInject

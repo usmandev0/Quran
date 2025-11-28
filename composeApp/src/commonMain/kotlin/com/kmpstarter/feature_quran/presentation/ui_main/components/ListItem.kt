@@ -25,7 +25,6 @@ import androidx.compose.ui.unit.dp
 import com.kmpstarter.feature_quran.data.data_source.dtos.Quran
 import com.kmpstarter.theme.Dimens
 import kmpstarter.composeapp.generated.resources.Res
-import kmpstarter.composeapp.generated.resources.arabic
 import kmpstarter.composeapp.generated.resources.noto
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.ui.tooling.preview.Preview
